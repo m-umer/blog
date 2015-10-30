@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
     respond_to do |format|
-        format.html { redirect_to post_path(@post) }
+        format.html { redirect_to article_path(@article) }
         format.js 
     end
   end

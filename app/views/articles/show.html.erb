@@ -1,19 +1,21 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<br>
+</br>
+<br>
+</br>
+<div class="container panel panel-default">
+  <p>
+    <h3 class="panel-heading">Title : <%= @article.title %></h3>
+  </p>
+  <p>
+    <h3 class="panel-heading">Text : <%= @article.text %></h3>
+  </p>
+  <h3 class="panel-heading">Comments:</h3>
+  <div id="comments">
+  	<%= render @article.comments %>
+  </div>
+  <h3 class="panel-heading">Add a comment:</h3>
+  <%= render 'comments/form' %>
 
-<h2>Comments</h2>
-<div id="comments">
-	<%= render @article.comments %>
+  <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary glyphicon glyphicon-edit" %> |
+  <%= link_to 'Back', articles_path, class: "btn btn-primary glyphicon glyphicon-arrow-left" %>
 </div>
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>

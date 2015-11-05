@@ -10,7 +10,7 @@
 </p>
 <p>
 	
-	  <%= link_to 'Destroy Comment', [comment.article, comment],
+	  <%= link_to 'Destroy Comment', [comment.article, comment], class: "btn btn-primary",
                method: :delete, remote: true,
                data: { confirm: 'Are you sure?' } %>
 </p>
